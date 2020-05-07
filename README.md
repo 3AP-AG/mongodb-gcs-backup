@@ -9,7 +9,7 @@ We provide a kubernetes support thanks to the helm chart located in the `chart` 
 
 You can pull the public image from Docker Hub:
 
-    docker pull 3apag/mongodb-gcs-backup:latest
+    docker pull 3apag/db-gcs-backup:latest
 
 
 ### Configuration
