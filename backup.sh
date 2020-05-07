@@ -84,8 +84,8 @@ backup() {
       cmd_db_part="--dbname=$DB_NAME"
     fi
 
-    echo "pg_dump --host=$DB_HOST --port=$DB_PORT --username=$DB_USER $cmd_db_part | gzip > $BACKUP_DIR/$archive_name"
-    cmd="pg_dump --host=$DB_HOST --port=$DB_PORT --username=$DB_USER $cmd_db_part | gzip > $BACKUP_DIR/$archive_name"
+    echo "PGPASSWORD=\"$DB_PASSWORD\" pg_dump --host=$DB_HOST --port=$DB_PORT --username=$DB_USER $cmd_db_part | gzip > $BACKUP_DIR/$archive_name"
+    cmd="PGPASSWORD=\"$DB_PASSWORD\" pg_dump --host=$DB_HOST --port=$DB_PORT --username=$DB_USER $cmd_db_part | gzip > $BACKUP_DIR/$archive_name"
   fi
 
   echo "starting to backup $DB_TYPE host=$DB_HOST port=$DB_PORT"
